@@ -7,15 +7,15 @@ class SponsorsModel {
   String image_url;
   String email;
   String description;
-  String url;
   SponsorsModel({
     required this.company,
     required this.phone,
     required this.image_url,
     required this.email,
     required this.description,
-    required this.url,
   });
+
+  
 
   SponsorsModel copyWith({
     String? company,
@@ -23,7 +23,6 @@ class SponsorsModel {
     String? image_url,
     String? email,
     String? description,
-    String? url,
   }) {
     return SponsorsModel(
       company: company ?? this.company,
@@ -31,7 +30,6 @@ class SponsorsModel {
       image_url: image_url ?? this.image_url,
       email: email ?? this.email,
       description: description ?? this.description,
-      url: url ?? this.url,
     );
   }
 
@@ -42,7 +40,6 @@ class SponsorsModel {
       'image_url': image_url,
       'email': email,
       'description': description,
-      'url': url,
     };
   }
 
@@ -53,39 +50,36 @@ class SponsorsModel {
       image_url: map['image_url'] as String,
       email: map['email'] as String,
       description: map['description'] as String,
-      url: map['url'] as String,
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory SponsorsModel.fromJson(String source) =>
-      SponsorsModel.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory SponsorsModel.fromJson(String source) => SponsorsModel.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
   String toString() {
-    return 'SponsorsModel(company: $company, phone: $phone, image_url: $image_url, email: $email, description: $description, url:$url)';
+    return 'SponsorsModel(company: $company, phone: $phone, image_url: $image_url, email: $email, description: $description)';
   }
 
   @override
   bool operator ==(covariant SponsorsModel other) {
     if (identical(this, other)) return true;
-
-    return other.company == company &&
-        other.phone == phone &&
-        other.image_url == image_url &&
-        other.email == email &&
-        other.description == description &&
-        other.url == url;
+  
+    return 
+      other.company == company &&
+      other.phone == phone &&
+      other.image_url == image_url &&
+      other.email == email &&
+      other.description == description;
   }
 
   @override
   int get hashCode {
     return company.hashCode ^
-        phone.hashCode ^
-        image_url.hashCode ^
-        email.hashCode ^
-        description.hashCode ^
-        url.hashCode;
+      phone.hashCode ^
+      image_url.hashCode ^
+      email.hashCode ^
+      description.hashCode;
   }
 }

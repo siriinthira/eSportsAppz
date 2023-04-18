@@ -8,8 +8,20 @@ import 'GamesCat.dart';
 import 'GamesCat2.dart';
 import 'GamesCat3.dart';
 
-class GamesRec extends StatelessWidget {
+class GamesRec extends StatefulWidget {
   const GamesRec({super.key});
+
+  @override
+  State<GamesRec> createState() => _GamesRecState();
+}
+
+class _GamesRecState extends State<GamesRec> {
+
+
+
+
+
+
 
   @override
   Widget build(BuildContext context) {

@@ -16,6 +16,7 @@ import 'package:app/eSports/sponsor/sponsors.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
 
+import '../gamer/following.dart';
 import '../news/views/esports_news.dart';
 import '../reccomend/views/GamesRec.dart';
 

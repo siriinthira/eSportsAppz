@@ -59,16 +59,16 @@ class _NewsScreenState extends State<NewsScreen> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[
             ElevatedButton(
-              onPressed: () => getNews('counterstrike2'),
-              child: Text('Counter'),
+              onPressed: () => getNews('fortnite'),
+              child: Text('Fortnite'),
             ),
             ElevatedButton(
               onPressed: () => getNews('apex-legends'),
-              child: Text(' Apex '),
+              child: Text(' Apex Legend '),
             ),
             ElevatedButton(
-              onPressed: () => getNews('rov-tournament'),
-              child: Text('ROV'),
+              onPressed: () => getNews('pokemon'),
+              child: Text('Pokemon'),
             ),
             ElevatedButton(
               onPressed: () => getNews('pubg'),

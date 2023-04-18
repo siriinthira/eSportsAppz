@@ -9,13 +9,14 @@ import 'package:firebase_core/firebase_core.dart';
 import 'gamers_model.dart';
 
 class Gamers extends StatefulWidget {
-  const Gamers({super.key});
+  const Gamers({Key? key}) : super(key: key);
 
   @override
   State<Gamers> createState() => _GamersState();
 }
 
 class _GamersState extends State<Gamers> {
+  
   //SearchBar
   TextEditingController? _valueContains = TextEditingController();
   //SearchList

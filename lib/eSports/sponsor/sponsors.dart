@@ -47,9 +47,6 @@ class _SponsorsState extends State<Sponsors> {
     });
   }
 
- 
-
-
   @override
   Widget build(BuildContext context) {
     print(sponsorsData);
