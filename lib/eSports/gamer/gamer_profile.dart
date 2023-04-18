@@ -5,6 +5,7 @@ import '../profile/views/styles.dart';
 import 'gamers_model.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class GamerProfile extends StatefulWidget {
   GamerProfile({super.key, required this.id});
@@ -247,6 +248,35 @@ class _GamerProfileState extends State<GamerProfile> {
                       ),
                     ),
                     SizedBox(
+                      height: 10,
+                    ),
+                    ElevatedButton(
+                      onPressed: () async {
+                        final Uri url = Uri.parse(
+                            "https://www.buymeacoffee.com/explore/gaming/");
+                        await launchUrl(url);
+                      },
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.green,
+                      ),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.coffee,
+                            color: Colors.white,
+                          ),
+                          const SizedBox(
+                            width: 8,
+                          ),
+                          const Text(
+                            'Buy Me A Coffee',
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ],
+                      ),
+                    ),
+                    SizedBox(
                       height: SizeConfig.blockSizeVertical! * 2.5,
                     ),
                     Row(
@@ -286,67 +316,73 @@ class _GamerProfileState extends State<GamerProfile> {
                             margin: EdgeInsets.only(
                               bottom: SizeConfig.blockSizeVertical! * 2.5,
                             ),
-                            child: Row(children: [
-                              Container(
-                                height: 100,
-                                width: 100,
-                                padding: const EdgeInsets.all(5),
-                                decoration: BoxDecoration(
-                                    color: kWhite,
+                            child: Row(
+                              children: [
+                                Container(
+                                  height: 100,
+                                  width: 100,
+                                  padding: const EdgeInsets.all(5),
+                                  decoration: BoxDecoration(
+                                      color: kWhite,
+                                      borderRadius:
+                                          BorderRadius.circular(kBorderRadius),
+                                      boxShadow: [
+                                        BoxShadow(
+                                          blurRadius: 24,
+                                          spreadRadius: 0,
+                                          offset: const Offset(0, 3),
+                                          color: kDarkBlue.withOpacity(0.051),
+                                        )
+                                      ]),
+                                  child: ClipRRect(
                                     borderRadius:
                                         BorderRadius.circular(kBorderRadius),
-                                    boxShadow: [
-                                      BoxShadow(
-                                        blurRadius: 24,
-                                        spreadRadius: 0,
-                                        offset: const Offset(0, 3),
-                                        color: kDarkBlue.withOpacity(0.051),
-                                      )
-                                    ]),
-                                child: ClipRRect(
-                                  borderRadius:
-                                      BorderRadius.circular(kBorderRadius),
-                                  child: Image.network(
-                                    gameImage,
-                                    fit: BoxFit.cover,
+                                    child: Image.network(
+                                      gameImage,
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
                                 ),
-                              ),
-                              SizedBox(
-                                width: SizeConfig.blockSizeVertical! * 2.5,
-                              ),
-                              Expanded(
+                                SizedBox(
+                                  width: SizeConfig.blockSizeVertical! * 2.5,
+                                ),
+                                Expanded(
                                   child: Column(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    'Interests',
-                                    style: kPoppinsRegular.copyWith(
-                                        color: kDarkBlue,
-                                        fontSize:
-                                            SizeConfig.blockSizeHorizontal! *
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Text(
+                                        'Interests',
+                                        style: kPoppinsRegular.copyWith(
+                                            color: kDarkBlue,
+                                            fontSize: SizeConfig
+                                                    .blockSizeHorizontal! *
                                                 2.5),
-                                  ),
-                                  SizedBox(
-                                    height: SizeConfig.blockSizeVertical! * 1,
-                                  ),
-                                  Text(
-                                    gameName,
-                                    maxLines: 2,
-                                    overflow: TextOverflow.ellipsis,
-                                    style: kPoppinsSemibold.copyWith(
-                                        color: kDarkBlue,
-                                        fontSize:
-                                            SizeConfig.blockSizeHorizontal! *
+                                      ),
+                                      SizedBox(
+                                        height:
+                                            SizeConfig.blockSizeVertical! * 1,
+                                      ),
+                                      Text(
+                                        gameName,
+                                        maxLines: 2,
+                                        overflow: TextOverflow.ellipsis,
+                                        style: kPoppinsSemibold.copyWith(
+                                            color: kDarkBlue,
+                                            fontSize: SizeConfig
+                                                    .blockSizeHorizontal! *
                                                 3),
+                                      ),
+                                      SizedBox(
+                                        height:
+                                            SizeConfig.blockSizeVertical! * 1,
+                                      ),
+                                    ],
                                   ),
-                                  SizedBox(
-                                    height: SizeConfig.blockSizeVertical! * 1,
-                                  ),
-                                ],
-                              ))
-                            ]),
+                                )
+                              ],
+                            ),
                           );
                         },
                       ),
