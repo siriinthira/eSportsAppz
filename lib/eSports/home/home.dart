@@ -16,8 +16,8 @@ import 'package:app/eSports/sponsor/sponsors.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:get/get.dart';
 
-import '../gamer/following.dart';
 import '../news/views/esports_news.dart';
+import '../news/views/news_article.dart';
 import '../reccomend/views/GamesRec.dart';
 
 import 'package:firebase_auth/firebase_auth.dart';
@@ -327,7 +327,7 @@ class _HomeScreenState extends State<HomeScreen> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => NewsScreen()));
+                                builder: (context) => NewsScreen2()));
                       },
                       child: Container(
                         decoration: BoxDecoration(
